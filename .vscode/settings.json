@@ -1,0 +1,25 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "**/*.d.ts": {
+      "when": "$(basename).ts"
+    },
+    "**/*.js.map": true,
+    "**/npm-debug.log": true
+  },
+  "tslint.autoFixOnSave": true,
+  "tslint.exclude": "**/test/**/*.ts",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "spellright.language": [
+    "English (American)"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext"
+  ]
+}
