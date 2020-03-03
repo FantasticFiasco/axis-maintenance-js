@@ -1,0 +1,2 @@
+issue: https://github.com/FantasticFiasco/axis-maintenance-js/issues/{0} #(\d+)
+tag: https://github.com/FantasticFiasco/axis-maintenance-js/releases/tag/{0} (v\d+\.\d+\.\d+)
