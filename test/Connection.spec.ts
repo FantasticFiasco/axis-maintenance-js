@@ -10,18 +10,18 @@ describe('connection', function() {
 
         it('should return URL given HTTP protocol', function() {
             // Act
-            const connection = new Connection(Protocol.Http, '1.2.3.4', 80, 'root', 'pass');
+            const connection = new Connection(Protocol.Http, '1.2.3.4', 5678, 'root', 'pass');
 
             // Assert
-            connection.url.should.equal('http://1.2.3.4:80');
+            connection.url.should.equal('http://1.2.3.4:5678');
         });
 
         it('should return URL given HTTPS protocol', function() {
             // Act
-            const connection = new Connection(Protocol.Https, '1.2.3.4', 80, 'root', 'pass');
+            const connection = new Connection(Protocol.Https, '1.2.3.4', 5678, 'root', 'pass');
 
             // Assert
-            connection.url.should.equal('https://1.2.3.4:80');
+            connection.url.should.equal('https://1.2.3.4:5678');
         });
 
     });
