@@ -42,15 +42,14 @@
   },
   "dependencies": {
     "@fantasticfiasco/expect": "1.0.4",
-    "debug": "4.1.1",
     "request": "2.88.2",
     "request-promise-native": "1.0.8"
   },
   "devDependencies": {
     "@types/chai": "4.2.10",
-    "@types/debug": "4.1.5",
     "@types/mocha": "7.0.2",
     "@types/node": "13.9.0",
+    "@types/request-promise-native": "1.0.17",
     "chai": "4.2.0",
     "copyfiles": "2.2.0",
     "coveralls": "3.0.9",
