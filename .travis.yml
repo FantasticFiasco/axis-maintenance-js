@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - "node"  # Current - Latest features
+  - "12"    # LTS - Recommended for most users
+
+matrix:
+  fast_finish: true
+
+install:
+  - yarn install
+
+script:
+  - echo -e "$(curl --silent https://raw.githubusercontent.com/FantasticFiasco/logo/master/logo.ansi)"
+  - if [ "$TRAVIS_NODE_VERSION" == "node" ]; then yarn coverage:publish; fi
+  - if [ "$TRAVIS_NODE_VERSION" != "node" ]; then yarn test; fi
+  - yarn lint
