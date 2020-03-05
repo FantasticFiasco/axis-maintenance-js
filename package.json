@@ -41,8 +41,10 @@
     "coverage:publish": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "dependencies": {
-    "@fantasticfiasco/expect": "1.*",
-    "debug": "4.*"
+    "@fantasticfiasco/expect": "1.0.4",
+    "debug": "4.1.1",
+    "request": "2.88.2",
+    "request-promise-native": "1.0.8"
   },
   "devDependencies": {
     "@types/chai": "4.2.10",
