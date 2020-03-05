@@ -1,0 +1,69 @@
+{
+  "name": "axis-maintenance",
+  "version": "0.0.1",
+  "description": "A Node.js library written in TypeScript capable of running maintenance tasks on Axis Communication cameras.",
+  "keywords": [
+    "axis",
+    "communications",
+    "camera",
+    "device",
+    "maintenance",
+    "restart",
+    "factory default"
+  ],
+  "homepage": "https://github.com/FantasticFiasco/axis-maintenance-js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FantasticFiasco/axis-maintenance-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FantasticFiasco/axis-maintenance-js/issues"
+  },
+  "author": "Mattias Kindborg <mattias.kindborg@gmail.com> (https://twitter.com/FantasticFiasco)",
+  "license": "Apache-2.0",
+  "main": "./lib/index.js",
+  "types": "./lib/index",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "clean": "rimraf \"./+(src|test)/**/*.+(d.ts|js|js.map)\" ./lib ./coverage",
+    "prebuild": "yarn clean",
+    "build": "tsc",
+    "postbuild": "copyfiles --up 1 \"./src/**/*.{d.ts,js}\" ./lib/",
+    "pretest": "yarn build",
+    "test": "mocha --recursive",
+    "lint": "tslint \"./src/**/*.ts\" --exclude \"./**/*.d.ts\"",
+    "precoverage": "yarn build",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --recursive",
+    "postcoverage": "remap-istanbul --input coverage/coverage.json --type lcovonly --output coverage/lcov.info",
+    "precoverage:publish": "yarn coverage",
+    "coverage:publish": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "dependencies": {
+    "@fantasticfiasco/expect": "1.*",
+    "debug": "4.*"
+  },
+  "devDependencies": {
+    "@types/chai": "4.2.10",
+    "@types/debug": "4.1.5",
+    "@types/mocha": "7.0.2",
+    "@types/node": "13.7.7",
+    "chai": "4.2.0",
+    "copyfiles": "2.2.0",
+    "coveralls": "3.0.9",
+    "istanbul": "0.4.5",
+    "mocha": "7.1.0",
+    "remap-istanbul": "0.13.0",
+    "rimraf": "3.0.2",
+    "tslint": "5.20.1",
+    "typescript": "3.8.3"
+  },
+  "resolutions": {
+    "diff": ">=3.5.0",
+    "handlebars": ">=4.3.0",
+    "js-yaml": ">=3.13.0",
+    "lodash": ">=4.17.13",
+    "sshpk": ">=1.13.2"
+  }
+}
