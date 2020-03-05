@@ -13,12 +13,13 @@ export class Maintenance {
     }
 
     /**
-     * TODO: Write
+     * Restarts the Axis device. The returned promise is resolved when the device accepts the
+     * restart request, before disconnecting from the network.
      * @throws {UnauthorizedError} User is not authorized to perform operation.
      * @throws {RequestError} Request failed.
      * @throws {UnknownError} Error cause is unknown.
      */
-    public async add(): Promise<void> {
+    public async restart(): Promise<void> {
         const request = new RestartRequest(this.connection);
         const response = await request.send();
 
