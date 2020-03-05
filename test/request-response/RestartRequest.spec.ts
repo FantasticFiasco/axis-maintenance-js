@@ -7,7 +7,7 @@ chai.should();
 
 describe('restart request', function() {
 
-    const connection = new Connection(Protocol.Http, '1.2.3.4', 80, 'root', 'pass');
+    const connection = new Connection(Protocol.Http, '1.2.3.4', 5678, 'root', 'pass');
 
     describe('#url', function() {
 
