@@ -2,7 +2,7 @@ import { Connection } from './Connection';
 import { RestartRequest } from './request-response';
 
 /**
- * Class responsible for running maintenance tasks on cameras from Axis Communication.
+ * Class responsible for running maintenance operations on cameras from Axis Communication.
  */
 export class Maintenance {
     /**
