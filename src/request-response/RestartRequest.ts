@@ -1,4 +1,4 @@
-import { Connection } from '..';
+import { Connection } from './..';
 import { Request } from './Request';
 import { RestartResponse } from './RestartResponse';
 
