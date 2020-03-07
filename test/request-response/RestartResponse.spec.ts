@@ -23,10 +23,32 @@ describe('restart response', function() {
             const response = new RestartResponse(html);
 
             // Act
-            response.assertSuccess();
+            const fn = () => response.assertSuccess();
+
+            // Assert
+            fn.should.not.throw();
         });
 
-        it('should throw exception given error response', function() {
+        it('should throw exception given error response without body', function() {
+            // Arrange
+            const html =
+                `<html>
+                    <head>
+                    </head>
+                    <body>
+                    </body>
+                </html>`;
+
+            const response = new RestartResponse(html);
+
+            // Act
+            const fn = () => response.assertSuccess();
+
+            // Assert
+            fn.should.throw(UnknownError, 'Request to restart device was not successful');
+        });
+
+        it('should throw exception given error response with body', function() {
             // Arrange
             const html =
                 `<html>
@@ -43,7 +65,7 @@ describe('restart response', function() {
             const fn = () => response.assertSuccess();
 
             // Assert
-            fn.should.throw(UnknownError);
+            fn.should.throw(UnknownError, 'Error: Some error');
         });
 
     });
