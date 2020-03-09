@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 
-import { Connection, Protocol } from './../../src';
-import { RestartRequest } from './../../src/request-response';
+import { Connection, Protocol } from '../../src';
+import { RestartRequest } from '../../src/restart/RestartRequest';
 
 chai.should();
 
