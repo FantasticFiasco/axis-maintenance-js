@@ -1,4 +1,5 @@
 import { FactoryDefaultType } from './factory-default';
+import { FactoryDefaultRequest } from './factory-default/FactoryDefaultRequest';
 import { RestartRequest } from './restart/RestartRequest';
 import { Connection } from './shared';
 
