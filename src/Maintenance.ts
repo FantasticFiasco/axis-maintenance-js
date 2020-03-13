@@ -1,5 +1,7 @@
-import { Connection } from './Connection';
-import { RestartRequest } from './request-response';
+import { FactoryDefaultType } from './factory-default';
+import { FactoryDefaultRequest } from './factory-default/FactoryDefaultRequest';
+import { RestartRequest } from './restart/RestartRequest';
+import { Connection } from './shared';
 
 /**
  * Class responsible for running maintenance operations on devices from Axis Communication.
@@ -13,14 +15,33 @@ export class Maintenance {
     }
 
     /**
-     * Restarts the Axis device. The returned promise is resolved when the device accepts the
-     * restart request, before disconnecting from the network.
+     * Restarts the Axis device.
+     *
+     * The returned promise is resolved when the device accepts the restart request, before
+     * disconnecting from the network.
      * @throws {UnauthorizedError} User is not authorized to perform operation.
      * @throws {RequestError} Request failed.
      * @throws {UnknownError} Error cause is unknown.
      */
     public async restart(): Promise<void> {
         const request = new RestartRequest(this.connection);
+        const response = await request.send();
+
+        response.assertSuccess();
+    }
+
+    /**
+     * Resets the Axis device to factory default.
+     *
+     * The returned promise is resolved when the device accepts the restart request, before
+     * disconnecting from the network.
+     * @param type The type of factory default.
+     * @throws {UnauthorizedError} User is not authorized to perform operation.
+     * @throws {RequestError} Request failed.
+     * @throws {UnknownError} Error cause is unknown.
+     */
+    public async factoryDefault(type: FactoryDefaultType): Promise<void> {
+        const request = new FactoryDefaultRequest(this.connection, type);
         const response = await request.send();
 
         response.assertSuccess();

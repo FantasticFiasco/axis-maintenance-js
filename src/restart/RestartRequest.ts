@@ -1,5 +1,5 @@
 import { Connection } from './..';
-import { Request } from './Request';
+import { Request } from './../shared/Request';
 import { RestartResponse } from './RestartResponse';
 
 export class RestartRequest extends Request {
