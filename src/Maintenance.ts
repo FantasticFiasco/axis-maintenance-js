@@ -31,7 +31,7 @@ export class Maintenance {
     }
 
     /**
-     * Reset the Axis device to factory default.
+     * Resets the Axis device to factory default.
      *
      * The returned promise is resolved when the device accepts the restart request, before
      * disconnecting from the network.
