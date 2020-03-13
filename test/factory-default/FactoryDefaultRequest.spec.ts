@@ -9,9 +9,9 @@ describe('factory default request', function() {
 
     const connection = new Connection(Protocol.Http, '1.2.3.4', 5678, 'root', 'pass');
 
-    describe('#url', function() {
+    describe('#url (partial)', function() {
 
-        it('should return partial type URL', function() {
+        it('should return URL', function() {
             // Act
             const request = new FactoryDefaultRequest(connection, FactoryDefaultType.Partial);
 
@@ -19,7 +19,11 @@ describe('factory default request', function() {
             request.url.should.equal(`${connection.url}/axis-cgi/factorydefault.cgi`);
         });
 
-        it('should return hard type URL', function() {
+    });
+
+    describe('#url (hard)', function() {
+
+        it('should return URL', function() {
             // Act
             const request = new FactoryDefaultRequest(connection, FactoryDefaultType.Hard);
 
