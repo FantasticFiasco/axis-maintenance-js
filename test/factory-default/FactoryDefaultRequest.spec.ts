@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 
-import { Connection, FactoryDefaultType, Protocol } from '../../src';
-import { FactoryDefaultRequest } from '../../src/factory-default/FactoryDefaultRequest';
+import { Connection, FactoryDefaultType, Protocol } from './../../src';
+import { FactoryDefaultRequest } from './../../src/factory-default/FactoryDefaultRequest';
 
 chai.should();
 

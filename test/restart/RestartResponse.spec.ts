@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 
-import { RestartResponse } from '../../src/restart/RestartResponse';
-import { UnknownError } from '../../src';
+import { RestartResponse } from './../../src/restart/RestartResponse';
+import { UnknownError } from './../../src';
 
 chai.should();
 

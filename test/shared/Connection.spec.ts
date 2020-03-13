@@ -1,6 +1,6 @@
 import * as chai from 'chai';
 
-import { Connection, Protocol } from '../../src';
+import { Connection, Protocol } from './../../src';
 
 chai.should();
 

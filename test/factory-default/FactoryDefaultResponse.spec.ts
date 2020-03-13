@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 
-import { FactoryDefaultResponse } from '../../src/factory-default/FactoryDefaultResponse';
-import { FactoryDefaultType, UnknownError } from '../../src';
+import { FactoryDefaultResponse } from './../../src/factory-default/FactoryDefaultResponse';
+import { FactoryDefaultType, UnknownError } from './../../src';
 
 chai.should();
 
