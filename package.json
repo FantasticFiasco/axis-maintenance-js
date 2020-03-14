@@ -47,7 +47,7 @@
     "request-promise-native": "1.*"
   },
   "devDependencies": {
-    "@types/chai": "4.2.10",
+    "@types/chai": "4.2.11",
     "@types/cheerio": "0.22.16",
     "@types/mocha": "7.0.2",
     "@types/node": "13.9.1",
