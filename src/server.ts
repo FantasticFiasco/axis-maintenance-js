@@ -1,4 +1,4 @@
-import { Connection, FactoryDefaultType, Maintenance, Protocol } from "./";
+import { Connection, FactoryDefaultType, Maintenance, Protocol } from './';
 
 const connection = new Connection(Protocol.Http, '192.168.1.102', 80, 'admin', '32naJzkJdZ!7*HK&Dz');
 const maintenance = new Maintenance(connection);
