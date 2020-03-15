@@ -15,3 +15,11 @@ script:
   - if [ "$TRAVIS_NODE_VERSION" == "node" ]; then yarn coverage:publish; fi
   - if [ "$TRAVIS_NODE_VERSION" != "node" ]; then yarn test; fi
   - yarn lint
+
+deploy:
+  - provider: releases
+    name: Release $TRAVIS_TAG
+    api_key:
+      secure: g+1ORRUWfZiM20bJIwMc2SF1rkZzU/o7AgpD0uqMZiP4LG27MXogEViM7Ef/bSXEdRdR1lOaPbjISRhG3AozXziLqWS2ej9mifCU11Fhuz63GIDkodYdxisDWMnW4w4LAJqPMb12DtR9WcHATHfbYAlOiAXvSuO2fGpgOeAMqymih4KzM/j9+A6bMjive9cOJh2VkCYvCbi9CcFUOxFVQkpKHyr58AJLpAvIrESJVs/IKzFZlKW8mwJXGKmRhoCLdN1N/9jCL7I0WSgsndI20YJARDyTu33RCOfdYO9MWTDoGr74ZzvhaduHlCVw8tAuIF9/selwScrP/+TozzII7cx0qNhLTGPEuSpPBo8hj3QRbFgTEk0vGoe3clPeVjOB4TJuI96Cvfrd48Qd685C+JczOkeiTBLu5/ih+ZZSygN0+ZmDkGq8pedAmqZ8xra+mqm7GbwN/q2Nvr6i/DHZpkSNy10EB6Sf97WtuU7mKnbxfejuQbg/fjn1tgdFFX8KHd99XPGPtWlfj7ReqSE6FR07ZRU5a5vTtyTN/jo7p8UtpLLfEINqn/UWhnB4jEQyZE4PhCXJOgBk380udxwtdTz/Lvk7X9LS02QI0JVHLP2x7gyqvIZNt1iE+8+0F0maiMXiFcRtDvEEphaIIHKZ3ra7664cVNcsD2JDSAymZww=
+    on:
+      tags: true
