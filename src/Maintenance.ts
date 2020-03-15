@@ -33,7 +33,7 @@ export class Maintenance {
     /**
      * Resets the Axis device to factory default.
      *
-     * The returned promise is resolved when the device accepts the restart request, before
+     * The returned promise is resolved when the device accepts the factory default request, before
      * disconnecting from the network.
      * @param type The type of factory default.
      * @throws {UnauthorizedError} User is not authorized to perform operation.
