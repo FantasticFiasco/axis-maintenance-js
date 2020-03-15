@@ -17,6 +17,13 @@ script:
   - yarn lint
 
 deploy:
+  - provider: npm
+    email: mattias.kindborg@gmail.com
+    api_key:
+      secure: NKdwfkS/ai9xY+30j054wpnNX/btUo3e7aMNdG5ZLgVqSHoOnadq45gWTR0Z5y7Eri4Cwrnkwtbu9QBBZc02335crOXdjTm3Jm9+eGOyCtBzoQp1M/PGqfEzu+80dwniqLIGo9D8csK6bReQZO0/EjrsPMtc+O+Zjs5rL3B9hIp2vueph4Bpm2xz7VyJdLoh66zhGLhGSBwFTkvdczaIMvY7FG6+NOZJsJwsBAXnA1f4KdxsPq3EYVXE5WGxCd1TCulLmeeCnyjyr8+S5lUmge48/Jvlq06qIGJaogc2h/IIfhbyqW5RpRLgFFKnFiigLwSMfInC0LB0Vn+z7Cqio+ippIY+SgTMos8sF4KpxaVDc7DxFsBbVtlzYIrndm7cymzIENdxyuE6XDzGNh6yUyhm7gTzPmzrAKi1RHIkc1dGijGSH72emYy76bgd+xGPOX/Zgdg57eIE5F+CN/3w30vf3ByTvUTtC6k1l+t1CB7kD4qLRtU9R5DYrJISj/J0cVMsiRmG64uNXD98lk7k2lKffeD6AH4909CNBjv8WkiITQPQuU9CKPnxjq0iPG1VME47lecn4UI0kRmKbYaFmOQfyE7UNa+cMZHPUnR8gxfn8PIwGLVwBPEqXfwg/daRHPAixbymCc0C+03PYWIIyVSHjGLh2u/30EpnyNyGT6U=
+    skip_cleanup: true
+    on:
+      tags: true
   - provider: releases
     name: Release $TRAVIS_TAG
     api_key:
