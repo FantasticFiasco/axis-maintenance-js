@@ -50,7 +50,7 @@
     "@types/chai": "4.2.11",
     "@types/cheerio": "0.22.17",
     "@types/mocha": "7.0.2",
-    "@types/node": "13.9.3",
+    "@types/node": "13.9.4",
     "@types/request-promise-native": "1.0.17",
     "chai": "4.2.0",
     "copyfiles": "2.2.0",
