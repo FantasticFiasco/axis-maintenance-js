@@ -1,22 +1,18 @@
-import * as chai from 'chai';
-
 import { Connection, Protocol } from './../../src';
 import { RestartRequest } from './../../src/restart/RestartRequest';
 
-chai.should();
-
-describe('restart request', function() {
+describe('restart request', () => {
 
     const connection = new Connection(Protocol.Http, '1.2.3.4', 5678, 'root', 'pass');
 
-    describe('#url', function() {
+    describe('#url', () => {
 
-        it('should return URL', function() {
+        test('should return URL', () => {
             // Act
             const request = new RestartRequest(connection);
 
             // Assert
-            request.url.should.equal(`${connection.url}/axis-cgi/restart.cgi`);
+            expect(request.url).toBe(`${connection.url}/axis-cgi/restart.cgi`);
         });
 
     });

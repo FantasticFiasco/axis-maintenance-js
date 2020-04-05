@@ -1,15 +1,11 @@
-import * as chai from 'chai';
-
 import { FactoryDefaultResponse } from './../../src/factory-default/FactoryDefaultResponse';
 import { FactoryDefaultType, UnknownError } from './../../src';
 
-chai.should();
+describe('factory default response', () => {
 
-describe('factory default response', function() {
+    describe('#assertSuccess (partial)', () => {
 
-    describe('#assertSuccess (partial)', function() {
-
-        it('should not throw exception given success response', function() {
+        test('should not throw exception given success response', () => {
             // Arrange
             const html =
                 `<html>
@@ -26,10 +22,10 @@ describe('factory default response', function() {
             const fn = () => response.assertSuccess();
 
             // Assert
-            fn.should.not.throw();
+            expect(fn).not.toThrowError();
         });
 
-        it('should throw exception given error response without body', function() {
+        test('should throw exception given error response without body', () => {
             // Arrange
             const html =
                 `<html>
@@ -45,10 +41,10 @@ describe('factory default response', function() {
             const fn = () => response.assertSuccess();
 
             // Assert
-            fn.should.throw(UnknownError, 'Request to reset device to factory default was not successful');
+            expect(fn).toThrowError(UnknownError);
         });
 
-        it('should throw exception given error response with body', function() {
+        test('should throw exception given error response with body', () => {
             // Arrange
             const html =
                 `<html>
@@ -65,14 +61,14 @@ describe('factory default response', function() {
             const fn = () => response.assertSuccess();
 
             // Assert
-            fn.should.throw(UnknownError, 'Error: Some error');
+            expect(fn).toThrowError(UnknownError);
         });
 
     });
 
-    describe('#assertSuccess (hard)', function() {
+    describe('#assertSuccess (hard)', () => {
 
-        it('should not throw exception given success response', function() {
+        test('should not throw exception given success response', () => {
             // Arrange
             const html =
                 `<html>
@@ -89,10 +85,10 @@ describe('factory default response', function() {
             const fn = () => response.assertSuccess();
 
             // Assert
-            fn.should.not.throw();
+            expect(fn).not.toThrowError();
         });
 
-        it('should throw exception given error response without body', function() {
+        test('should throw exception given error response without body', () => {
             // Arrange
             const html =
                 `<html>
@@ -108,10 +104,10 @@ describe('factory default response', function() {
             const fn = () => response.assertSuccess();
 
             // Assert
-            fn.should.throw(UnknownError, 'Request to reset device to factory default was not successful');
+            expect(fn).toThrowError(UnknownError);
         });
 
-        it('should throw exception given error response with body', function() {
+        test('should throw exception given error response with body', () => {
             // Arrange
             const html =
                 `<html>
@@ -128,7 +124,7 @@ describe('factory default response', function() {
             const fn = () => response.assertSuccess();
 
             // Assert
-            fn.should.throw(UnknownError, 'Error: Some error');
+            expect(fn).toThrowError(UnknownError);
         });
 
     });

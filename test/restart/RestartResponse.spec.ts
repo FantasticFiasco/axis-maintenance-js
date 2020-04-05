@@ -1,15 +1,11 @@
-import * as chai from 'chai';
-
 import { RestartResponse } from './../../src/restart/RestartResponse';
 import { UnknownError } from './../../src';
 
-chai.should();
+describe('restart response', () => {
 
-describe('restart response', function() {
+    describe('#assertSuccess', () => {
 
-    describe('#assertSuccess', function() {
-
-        it('should not throw exception given success response', function() {
+        test('should not throw exception given success response', () => {
             // Arrange
             const html =
                 `<html>
@@ -26,10 +22,10 @@ describe('restart response', function() {
             const fn = () => response.assertSuccess();
 
             // Assert
-            fn.should.not.throw();
+            expect(fn).not.toThrowError();
         });
 
-        it('should throw exception given error response without body', function() {
+        test('should throw exception given error response without body', () => {
             // Arrange
             const html =
                 `<html>
@@ -45,10 +41,10 @@ describe('restart response', function() {
             const fn = () => response.assertSuccess();
 
             // Assert
-            fn.should.throw(UnknownError, 'Request to restart device was not successful');
+            expect(fn).toThrowError(UnknownError);
         });
 
-        it('should throw exception given error response with body', function() {
+        test('should throw exception given error response with body', () => {
             // Arrange
             const html =
                 `<html>
@@ -65,7 +61,7 @@ describe('restart response', function() {
             const fn = () => response.assertSuccess();
 
             // Assert
-            fn.should.throw(UnknownError, 'Error: Some error');
+            expect(fn).toThrowError(UnknownError);
         });
 
     });
