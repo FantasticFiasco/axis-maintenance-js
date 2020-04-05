@@ -1,34 +1,30 @@
-import * as chai from 'chai';
-
 import { Connection, FactoryDefaultType, Protocol } from './../../src';
 import { FactoryDefaultRequest } from './../../src/factory-default/FactoryDefaultRequest';
 
-chai.should();
-
-describe('factory default request', function() {
+describe('factory default request', () => {
 
     const connection = new Connection(Protocol.Http, '1.2.3.4', 5678, 'root', 'pass');
 
-    describe('#url (partial)', function() {
+    describe('#url (partial)', () => {
 
-        it('should return URL', function() {
+        test('should return URL', () => {
             // Act
             const request = new FactoryDefaultRequest(connection, FactoryDefaultType.Partial);
 
             // Assert
-            request.url.should.equal(`${connection.url}/axis-cgi/factorydefault.cgi`);
+            expect(request.url).toBe(`${connection.url}/axis-cgi/factorydefault.cgi`);
         });
 
     });
 
-    describe('#url (hard)', function() {
+    describe('#url (hard)', () => {
 
-        it('should return URL', function() {
+        test('should return URL', () => {
             // Act
             const request = new FactoryDefaultRequest(connection, FactoryDefaultType.Hard);
 
             // Assert
-            request.url.should.equal(`${connection.url}/axis-cgi/hardfactorydefault.cgi`);
+            expect(request.url).toBe(`${connection.url}/axis-cgi/hardfactorydefault.cgi`);
         });
 
     });
