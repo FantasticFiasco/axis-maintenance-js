@@ -15,6 +15,7 @@ export abstract class Request {
                 pass: this.connection.password,
                 sendImmediately: false,
             },
+            agent: this.connection.options?.agent,
         };
 
         try {
