@@ -1,6 +1,6 @@
 {
   "name": "axis-maintenance",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Node.js library written in TypeScript capable of running maintenance operations on cameras from Axis Communication.",
   "keywords": [
     "axis",
