@@ -33,7 +33,8 @@
     "postbuild": "copyfiles --up 1 \"./src/**/*.{d.ts,js}\" ./lib/",
     "test": "jest",
     "lint": "tslint \"./src/**/*.ts\" --exclude \"./**/*.d.ts\"",
-    "coverage": "jest --coverage && coveralls < coverage/lcov.info"
+    "coverage": "jest --coverage && coveralls < coverage/lcov.info",
+    "prepack": "yarn build"
   },
   "dependencies": {
     "@fantasticfiasco/expect": "1.*",
