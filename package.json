@@ -29,8 +29,7 @@
   "scripts": {
     "clean": "rimraf \"./+(src|test)/**/*.+(d.ts|js|js.map)\" ./lib ./coverage",
     "prebuild": "yarn clean",
-    "build": "tsc",
-    "postbuild": "copyfiles --up 1 \"./src/**/*.{d.ts,js}\" ./lib/",
+    "build": "tsc -b",
     "test": "jest",
     "lint": "tslint \"./src/**/*.ts\" --exclude \"./**/*.d.ts\"",
     "coverage": "jest --coverage && coveralls < coverage/lcov.info",
@@ -47,7 +46,6 @@
     "@types/jest": "25.2.2",
     "@types/node": "14.0.1",
     "@types/request-promise-native": "1.0.17",
-    "copyfiles": "2.2.0",
     "coveralls": "3.1.0",
     "jest": "26.0.1",
     "rimraf": "3.0.2",
