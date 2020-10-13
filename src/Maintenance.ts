@@ -11,8 +11,7 @@ export class Maintenance {
      * Initializes a new instance of the class.
      * @param connection The connection to the device.
      */
-    constructor(private readonly connection: Connection) {
-    }
+    constructor(private readonly connection: Connection) {}
 
     /**
      * Restarts the Axis device.

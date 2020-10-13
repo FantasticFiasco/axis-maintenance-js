@@ -4,9 +4,7 @@ import { FactoryDefaultResponse } from './FactoryDefaultResponse';
 import { FactoryDefaultType } from './FactoryDefaultType';
 
 export class FactoryDefaultRequest extends Request {
-    constructor(
-        connection: Connection,
-        private readonly type: FactoryDefaultType) {
+    constructor(connection: Connection, private readonly type: FactoryDefaultType) {
         super(connection);
     }
 
@@ -17,8 +15,8 @@ export class FactoryDefaultRequest extends Request {
     }
 
     public get url(): string {
-        return this.type === FactoryDefaultType.Partial ?
-            `${this.connection.url}/axis-cgi/factorydefault.cgi` :
-            `${this.connection.url}/axis-cgi/hardfactorydefault.cgi`;
+        return this.type === FactoryDefaultType.Partial
+            ? `${this.connection.url}/axis-cgi/factorydefault.cgi`
+            : `${this.connection.url}/axis-cgi/hardfactorydefault.cgi`;
     }
 }

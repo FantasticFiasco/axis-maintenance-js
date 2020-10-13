@@ -1,14 +1,11 @@
-import { FactoryDefaultResponse } from './../../src/factory-default/FactoryDefaultResponse';
 import { FactoryDefaultType, UnknownError } from './../../src';
+import { FactoryDefaultResponse } from './../../src/factory-default/FactoryDefaultResponse';
 
 describe('factory default response', () => {
-
     describe('#assertSuccess (partial)', () => {
-
         test('should not throw exception given success response', () => {
             // Arrange
-            const html =
-                `<html>
+            const html = `<html>
                     <head>
                         <meta http-equiv="refresh" content="0;URL=/admin/factoryMessage.shtml?server=172.25.75.132">
                     </head>
@@ -27,8 +24,7 @@ describe('factory default response', () => {
 
         test('should throw exception given error response without body', () => {
             // Arrange
-            const html =
-                `<html>
+            const html = `<html>
                     <head>
                     </head>
                     <body>
@@ -46,8 +42,7 @@ describe('factory default response', () => {
 
         test('should throw exception given error response with body', () => {
             // Arrange
-            const html =
-                `<html>
+            const html = `<html>
                     <head>
                     </head>
                     <body>
@@ -63,15 +58,12 @@ describe('factory default response', () => {
             // Assert
             expect(fn).toThrowError(UnknownError);
         });
-
     });
 
     describe('#assertSuccess (hard)', () => {
-
         test('should not throw exception given success response', () => {
             // Arrange
-            const html =
-                `<html>
+            const html = `<html>
                     <head>
                         <meta http-equiv="refresh" content="0;URL=/admin/factoryMessage2.shtml?server=172.25.75.132">
                     </head>
@@ -90,8 +82,7 @@ describe('factory default response', () => {
 
         test('should throw exception given error response without body', () => {
             // Arrange
-            const html =
-                `<html>
+            const html = `<html>
                     <head>
                     </head>
                     <body>
@@ -109,8 +100,7 @@ describe('factory default response', () => {
 
         test('should throw exception given error response with body', () => {
             // Arrange
-            const html =
-                `<html>
+            const html = `<html>
                     <head>
                     </head>
                     <body>
@@ -126,6 +116,5 @@ describe('factory default response', () => {
             // Assert
             expect(fn).toThrowError(UnknownError);
         });
-
     });
 });

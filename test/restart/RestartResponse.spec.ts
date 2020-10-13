@@ -1,14 +1,11 @@
-import { RestartResponse } from './../../src/restart/RestartResponse';
 import { UnknownError } from './../../src';
+import { RestartResponse } from './../../src/restart/RestartResponse';
 
 describe('restart response', () => {
-
     describe('#assertSuccess', () => {
-
         test('should not throw exception given success response', () => {
             // Arrange
-            const html =
-                `<html>
+            const html = `<html>
                     <head>
                         <meta http-equiv="refresh" content="0;URL=/admin/restartMessage.shtml?server=172.25.75.132">
                     </head>
@@ -27,8 +24,7 @@ describe('restart response', () => {
 
         test('should throw exception given error response without body', () => {
             // Arrange
-            const html =
-                `<html>
+            const html = `<html>
                     <head>
                     </head>
                     <body>
@@ -46,8 +42,7 @@ describe('restart response', () => {
 
         test('should throw exception given error response with body', () => {
             // Arrange
-            const html =
-                `<html>
+            const html = `<html>
                     <head>
                     </head>
                     <body>
@@ -63,6 +58,5 @@ describe('restart response', () => {
             // Assert
             expect(fn).toThrowError(UnknownError);
         });
-
     });
 });

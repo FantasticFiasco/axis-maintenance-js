@@ -6,9 +6,7 @@ export class FactoryDefaultResponse extends Response {
     private static readonly SuccessResponsePartialType = /factoryMessage/i;
     private static readonly SuccessResponseHardType = /factoryMessage2/i;
 
-    constructor(
-        response: string,
-        private readonly type: FactoryDefaultType) {
+    constructor(response: string, private readonly type: FactoryDefaultType) {
         super(response);
     }
 

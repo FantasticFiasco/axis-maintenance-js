@@ -1,3 +1,3 @@
 export * from './factory-default';
-export * from './shared';
 export * from './Maintenance';
+export * from './shared';
