@@ -1,5 +1,7 @@
 # axis-maintenance
 
+# THIS REPOSITORY HAS MOVED TO [FantasticFiasco/axis-js](https://github.com/FantasticFiasco/axis-js)
+
 [![Build Status](https://travis-ci.com/FantasticFiasco/axis-maintenance-js.svg?branch=master)](https://travis-ci.com/FantasticFiasco/axis-maintenance-js)
 [![Coverage Status](https://coveralls.io/repos/github/FantasticFiasco/axis-maintenance-js/badge.svg?branch=master)](https://coveralls.io/github/FantasticFiasco/axis-maintenance-js?branch=master)
 [![npm version](https://img.shields.io/npm/v/axis-maintenance.svg)](https://www.npmjs.com/package/axis-maintenance)
